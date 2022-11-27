@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    padding: 10px;
+}
+.leftBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+.userPhotoBlock{}
+.userPhoto {
+    width: 100px;
+    height: 100px;
+}
+.followBlock{}
+
+
+.rightBlock{
+    padding: 10px;
+    border: 1px solid #7c7a7a;
+    border-radius: 5px;
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
+}
+.mainText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.fullName{
+    font-weight: 500;
+}
+.status{
+    color: #6e6c6c;
+}
+
+.location{
+    font-weight: 500;
+}
+.country{}
+.city{}
