@@ -1,11 +1,13 @@
 import {combineReducers, legacy_createStore as createStore} from "redux";
-import {AddPostACType, profileReducer, ProfileStateType, UpdateNewTextACType} from "./profileReducer";
-import {AddMessageACType, dialogsReducer, DialogsStateType, UpdateNewMessageTextACType} from "./dialogsReducer";
-import {SetUsersACType, ToggleFollowModeACType, usersReducer} from "./usersReducer";
+import {AddPostACType, profileReducer, UpdateNewTextACType} from "./profileReducer";
+import {AddMessageACType, dialogsReducer, UpdateNewMessageTextACType} from "./dialogsReducer";
+import {
+    usersReducer,
+    usersReducerActionsType
+} from "./usersReducer";
 
 export type ActionsType = AddPostACType | UpdateNewTextACType |
-    UpdateNewMessageTextACType | AddMessageACType | ToggleFollowModeACType |
-    SetUsersACType
+    UpdateNewMessageTextACType | AddMessageACType | usersReducerActionsType
 
 
 export type RootState = ReturnType<typeof reducers>
