@@ -2,15 +2,15 @@ import {ActionsType} from "./store";
 
 
 export type UserType = {
+    name: string,
     id: number,
+    uniqueUrlName: string | null,
+    photos: {
+        small: string | any,
+        large: string | any
+    },
+    status: string | null,
     followed: boolean,
-    fullName: string,
-    status: string,
-    photo: string;
-    location: {
-        city: string,
-        country: string
-    }
 }
 export type UsersStateType = {
     users: UserType[];
@@ -19,34 +19,7 @@ export type ToggleFollowModeACType = ReturnType<typeof toggleFollowModeAC>
 export type SetUsersACType = ReturnType<typeof setUsersAC>
 
 let initialState: UsersStateType = {
-    users: [
-        {
-            id: 1,
-            photo: 'https://i.pinimg.com/280x280_RS/e5/1e/a3/e51ea332f4fa01f227bb2318a9c11646.jpg',
-            followed: false,
-            fullName: 'Alex',
-            status: 'A love you',
-            location: {city: 'Minsk', country: 'Belarus'}
-        },
-
-
-        {
-            id: 2,
-            photo: 'https://i.pinimg.com/280x280_RS/e5/1e/a3/e51ea332f4fa01f227bb2318a9c11646.jpg',
-            followed: true,
-            fullName: 'Max',
-            status: 'You love ?',
-            location: {city: 'Moscow', country: 'Russia'}
-        },
-        {
-            id: 3,
-            photo: 'https://i.pinimg.com/280x280_RS/e5/1e/a3/e51ea332f4fa01f227bb2318a9c11646.jpg',
-            followed: false,
-            fullName: 'Sasha',
-            status: 'A kkakaka',
-            location: {city: 'Kiev', country: 'Ukraine'}
-        },
-    ]
+    users: []
 }
 
 

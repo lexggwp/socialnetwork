@@ -8,7 +8,7 @@ export type ActionsType = AddPostACType | UpdateNewTextACType |
     SetUsersACType
 
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof reducers>
 
 let reducers = combineReducers({
     profilePage: profileReducer,
