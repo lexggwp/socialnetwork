@@ -1,6 +1,42 @@
-.background {
-    width: 100%;
-}
-.description {
+.profileInfo {
+    max-width: 800px;
+    display: flex;
     padding: 10px;
+    justify-content: space-between;
+}
+
+.profilePhotoBlock{
+    padding: 15px;
+}
+.profilePhotoBlock img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.profileMainBlock{
+
+    display: flex;
+    flex-direction: column;
+    margin: 10px 15px;
+    max-width: 300px;
+}
+.fullName{
+
+    color: #7c7a7a;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0 0 50px 0;
+}
+.contacts{
+    display: flex;
+    flex-direction: column
+
+}
+.contact {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.contactDescription{
+    color: #9d8c52;
 }

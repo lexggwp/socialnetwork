@@ -24,7 +24,7 @@ export type ProfileInfoType = {
 }
 
 export type ProfileStateType = {
-    profileInfo: any
+    profileInfo: ProfileInfoType | null
     postsData: PostType[],
     newPostText: string,
 }
@@ -32,8 +32,6 @@ export type ProfileStateType = {
 export type AddPostACType = ReturnType<typeof AddPostAC>
 export type UpdateNewTextACType = ReturnType<typeof updateNewPostTextAC>
 export type SetUserProfileACType = ReturnType<typeof setUserProfileAC>
-// export type setLoadingUserACType = ReturnType<typeof setLoadingUserAC>
-
 
 export type profileReducerActionsType = AddPostACType | UpdateNewTextACType | SetUserProfileACType
 

@@ -6,7 +6,7 @@ import {ProfileInfoType} from "../../redux/profileReducer";
 import Loader from "../UI/Loader/Loader";
 
 type ProfilePropsType = {
-    profileInfo: ProfileInfoType,
+    profileInfo: ProfileInfoType | null
 }
 
 const Profile = (props: ProfilePropsType) => {
