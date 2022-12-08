@@ -1,7 +1,11 @@
 import React from 'react';
 import s from "./ProfileInfo.module.css";
+import {ProfileInfoType} from "../../../redux/profileReducer";
+type ProfileInfoPropsType = {
+    profileInfo: ProfileInfoType
+}
 
-const ProfileInfo = () => {
+const ProfileInfo = (props: ProfileInfoPropsType) => {
     return (
         <div>
             <div>
@@ -10,10 +14,13 @@ const ProfileInfo = () => {
                      alt=""/>
             </div>
             <div className={s.description}>
-                ava + descr
+                <span>{props.profileInfo.aboutMe}</span>
+                <img src={props.profileInfo.photos.large} alt=""/>
             </div>
         </div>
     );
+
+
 };
 
 export default ProfileInfo;

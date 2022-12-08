@@ -15,20 +15,24 @@ export type UsersStateType = {
     pageSize: number;
     totalUsersCount: number,
     currentPage: number,
+    isFetching: boolean,
 }
 export type ToggleFollowModeACType = ReturnType<typeof toggleFollowModeAC>
 export type SetUsersACType = ReturnType<typeof setUsersAC>
 export type SetCurrentPage = ReturnType<typeof setCurrentPageAC>
 export type SetTotalUserCountACType = ReturnType<typeof setTotalUsersCountAC>
+export type SetLoadingModeACType = ReturnType<typeof setLoadingModeAC>
 
 
-export type usersReducerActionsType = ToggleFollowModeACType | SetUsersACType | SetCurrentPage| SetTotalUserCountACType ;
+export type usersReducerActionsType = ToggleFollowModeACType | SetUsersACType | SetCurrentPage| SetTotalUserCountACType |
+    SetLoadingModeACType;
 
 let initialState: UsersStateType = {
     users: [],
-    pageSize: 5,
+    pageSize: 10,
     totalUsersCount: 0,
     currentPage: 1,
+    isFetching: false,
 }
 
 
@@ -46,6 +50,8 @@ export const usersReducer = (state = initialState, action: usersReducerActionsTy
             return {...state, currentPage: action.currentPage}
         case "SET-USERS-COUNT":
             return {...state, totalUsersCount: action.usersCount}
+        case "SET-LOADING-MODE":
+            return {...state, isFetching: action.isFetching}
         default:
             return state
     }
@@ -55,3 +61,4 @@ export const toggleFollowModeAC = (userID: number) => ({type: 'TOGGLE-FOLLOW-MOD
 export const setUsersAC = (users: UserType[]) => ({type: 'SET-USERS', users} as const)
 export const setCurrentPageAC = (currentPage: number) => ({type: 'SET-CURRENT-PAGE', currentPage} as const)
 export const setTotalUsersCountAC = (usersCount: number) => ({type: 'SET-USERS-COUNT', usersCount} as const)
+export const setLoadingModeAC = (isFetching: boolean) => ({type: 'SET-LOADING-MODE', isFetching} as const)

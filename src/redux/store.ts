@@ -1,12 +1,12 @@
 import {combineReducers, legacy_createStore as createStore} from "redux";
-import {AddPostACType, profileReducer, UpdateNewTextACType} from "./profileReducer";
+import {profileReducer, profileReducerActionsType} from "./profileReducer";
 import {AddMessageACType, dialogsReducer, UpdateNewMessageTextACType} from "./dialogsReducer";
 import {
     usersReducer,
     usersReducerActionsType
 } from "./usersReducer";
 
-export type ActionsType = AddPostACType | UpdateNewTextACType |
+export type ActionsType = profileReducerActionsType |
     UpdateNewMessageTextACType | AddMessageACType | usersReducerActionsType
 
 
@@ -21,5 +21,8 @@ let reducers = combineReducers({
 
 
 let store = createStore(reducers);
+
+// @ts-ignore
+window.store = store;
 
 export default store;
